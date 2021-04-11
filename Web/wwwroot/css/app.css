@@ -1,0 +1,344 @@
+﻿.btn.btn-label-warning {
+    background-color: rgba(255,184,34,.2);
+    color: #ffb822;
+    cursor: text !important;
+}
+
+.btn.btn-label-danger {
+    background-color: rgba(253,39,235,.2);
+    color: #fd27eb;
+    cursor: text !important;
+}
+
+.btn.btn-label-success {
+    background-color: rgba(29,201,183,.2);
+    color: #1dc9b7;
+    cursor: text !important;
+}
+
+.hi-icon-effect-3 .hi-icon {
+    box-shadow: 0 0 0 1px #d6d8da;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.hi-icon-effect-3b .hi-icon {
+    color: #879097;
+    background: #d6d8da;
+}
+
+.table-bordered {
+    border: 0px solid #ebedf2 !important;
+}
+
+
+.rf-app-yes {
+    color: rgb(249, 67, 137);
+    font-size: 27px;
+}
+
+.rf-app-no {
+    color: rgb(74, 186, 96);
+    font-size: 30px;
+}
+
+@media (min-width: 1025px) {
+    .kt-header-menu-wrapper {
+        margin-left: 20px;
+    }
+}
+
+.rf-steper-ui-crud {
+    display: none;
+}
+
+.rf-steper-ui-cruda {
+    grid-template-columns: auto;
+    height: 50px;
+}
+
+    .rf-steper-ui-cruda > div:not(.all) {
+        display: none;
+    }
+
+
+
+/*---------------Dashboard------------------*/
+
+#cDashboard {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+.v-count-card-holder {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0 -10px;
+}
+
+    .v-count-card-holder > .v-count-card {
+        flex: 1 0 250px;
+        min-width: 250px;
+        height: 90px;
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: white;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.5s ease-in;
+    }
+
+.v-count-card > .vcc-icon {
+    flex: 0 0 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .v-count-card > .vcc-icon > img {
+        width: 100%;
+    }
+
+.v-count-card > .vcc-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+    .v-count-card > .vcc-info > .vcc-number {
+        flex: auto;
+        font-size: 35px;
+        font-weight: 500;
+        transition: all 0.5s ease-in;
+    }
+
+    .v-count-card > .vcc-info > .vcc-label {
+        flex: auto;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease-in;
+        text-transform: uppercase;
+    }
+
+        .v-count-card > .vcc-info > .vcc-label > span {
+            margin-left: 5px;
+            font-size: 12px;
+            font-weight: 400;
+            color: green;
+        }
+
+.v-count-card-holder > .v-count-card:hover {
+    background-color: #fae4ec;
+}
+
+    .v-count-card-holder > .v-count-card:hover > .vcc-info > .vcc-number,
+    .v-count-card-holder > .v-count-card:hover > .vcc-info > .vcc-label {
+        color: #f0477c;
+    }
+
+
+[d-carousel] {
+    display: flex;
+    margin-bottom: -5px;
+}
+
+    [d-carousel] > [dc-title] {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #464457;
+    }
+
+    [d-carousel] > [dcnbtn] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1px;
+        width: 23px;
+        height: 23px;
+        background-color: rgb(253, 135, 167);
+        border-radius: 50%;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        opacity: 0.15;
+        transition: all 0.5s ease-in;
+    }
+
+    [d-carousel] > [dcnbtn="left"] {
+        left: 0px;
+    }
+
+    [d-carousel] > [dcnbtn="right"] {
+        right: 0px;
+    }
+
+    [d-carousel] > [dcnbtn][dcdisable="false"]:hover {
+        opacity: 1;
+    }
+
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v14/4iCs6KVjbNBYlgoKcg72j00.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v14/4iCs6KVjbNBYlgoKew72j00.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v14/4iCs6KVjbNBYlgoKcw72j00.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v14/4iCs6KVjbNBYlgoKfA72j00.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v14/4iCs6KVjbNBYlgoKcQ72j00.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Ubuntu Regular'), local('Ubuntu-Regular'), url(https://fonts.gstatic.com/s/ubuntu/v14/4iCs6KVjbNBYlgoKfw72.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+#tblEvent .progress {
+    background-color: #8ebc0036;
+    height: 15px;
+}
+
+
+#tblEvent .widget-content-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+}
+
+#tblEvent .pr-2, .px-2 {
+    padding-right: 0.5rem !important;
+}
+
+#tblEvent .fsize-1 {
+    font-size: .95rem !important;
+    font-weight: 600;
+}
+
+#tblEvent .widget-content .widget-content-right {
+    margin-left: auto;
+}
+
+#tblEvent .w-100 {
+    width: 100% !important;
+}
+
+.badge-na {
+    /*padding: 2px 5px;*/
+    padding: 0.2em 0.4em;
+    border-radius: 10px;
+    background-color: #2FA4E7
+}
+
+.widget-content-left {
+    min-width: 35px !important;
+}
+
+#tblEvent .table-report th, #tblEvent .table-report td, #tblProjectCoordinator th, #tblProjectCoordinator td, #tblProgram th, #tblProgram td, #tblFieldOffice th, #tblFieldOffice td {
+    border: 1px solid #dedede38 !important;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+    #tblEvent .table-report th::first-letter,
+    #tblEvent .table-report td::first-letter,
+    #tblProjectCoordinator th::first-letter,
+    #tblProjectCoordinator td::first-letter,
+    #tblProgram th::first-letter,
+    #tblProgram td::first-letter,
+    #tblFieldOffice th::first-letter,
+    #tblFieldOffice td::first-letter {
+        text-transform: uppercase !important;
+    }
+
+.process-item {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+    font-weight: 600;
+    /*color: #033C73 !important;*/
+    color: #4c4c4c !important;
+    font-size: 13px;
+}
+
+.ml-minus-10 {
+    margin-left: -10px;
+}
+
+.text-ellipisis {
+    /*width: 250px;
+    max-width: 250px;*/
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+
+.cir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perc {
+    height: 0 !important;
+    line-height: 0 !important;
+}
+
+.r-600 {
+    font-weight: 600;
+}
+
+.badge-bold {
+    font-weight: bold;
+}

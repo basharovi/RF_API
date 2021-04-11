@@ -1,0 +1,481 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+<link href="/css/app.css" rel="stylesheet" />
+<style>
+
+
+
+    #rf-card-content {
+        padding: 6px !important;
+    }
+
+    .kt-portlet .kt-portlet__head {
+        min-height: 30px !important;
+        padding: 0 8px;
+    }
+
+    .fa {
+        color: #10c4b2 !important;
+    }
+
+    /*.content-table {
+        font-family: 'Quicksand', sans-serif;
+        border-collapse: collapse;
+        margin: 0;
+        font-size: 0.9em;*/
+    /*min-width: 690px;*/
+    /*width: 100%;
+        border-radius: 6px 6px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        background-color: #fff;
+    }
+
+        .content-table thead tr {
+            background-color: #10c4b2;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th {
+            padding: 7px 12px;
+            text-align: center !important;
+        }
+
+        .content-table td {
+            padding: 5px 10px;
+            border: 1px solid #dddddd;
+            text-align: center !important;
+        }
+
+        .content-table tbody td:first-child {
+            padding-left: 10px !important;
+            text-align: left !important;
+        }
+
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid #10c4b2;
+        }*/
+
+    .kt-badge--pink {
+        background: transparent;
+        color: #fd3993;
+        border: 1px solid #fd3993;
+    }
+
+
+
+    .table {
+        margin-bottom: 0 !important;
+        box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+    }
+
+    .table-bordered {
+        border: 1px solid #ebedf2 !important;
+    }
+
+
+    .tablediv {
+        margin: auto;
+        display: flex;
+        outline: 0;
+        position: relative;
+        justify-content: center;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        border-bottom: 1px solid rgba(224, 224, 224, 1);
+        height: 30px !important;
+    }
+
+    .table > thead > tr > th {
+        position: sticky;
+        top: -1px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
+        background-color: #fbfbfb;
+        transition: all 1s ease-in;
+        z-index: 2;
+    }
+</style>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0" style="visibility: hidden">
+    <defs>
+        <linearGradient id="svg-cat0" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#bb6e36; stop-opacity:0.95" />
+            <stop offset="100%" style="stop-color:#bb6e36; stop-opacity:0.05" />
+        </linearGradient>
+    </defs>
+    <defs>
+        <linearGradient id="svg-cat1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#3bafda; stop-opacity:0.95" />
+            <stop offset="100%" style="stop-color:#3bafda; stop-opacity:0.05" />
+        </linearGradient>
+    </defs>
+    <defs>
+        <linearGradient id="svg-cat2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="        stop-color: #ec4141;
+        stop-opacity: 0.95" />
+            <stop offset="100%" style="stop-color:#ec4141; stop-opacity:0.05" />
+        </linearGradient>
+    </defs>
+    <defs>
+        <linearGradient id="svg-cat3" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#3bafda; stop-opacity:0.95" />
+            <stop offset="100%" style="stop-color:#3bafda; stop-opacity:0.05" />
+        </linearGradient>
+    </defs>
+    <defs>
+        <linearGradient id="svg-cat4" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="50%" style="stop-color:#a0d396; stop-opacity:0.95" />
+            <stop offset="100%" style="stop-color:#a0d396; stop-opacity:0.05" />
+        </linearGradient>
+    </defs>
+    <defs>
+        <linearGradient id="svg-cat5" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#f2d028; stop-opacity:0.95" />
+            <stop offset="100%" style="stop-color:#f2d028; stop-opacity:0.05" />
+        </linearGradient>
+    </defs>
+    <defs>
+        <linearGradient id="svg-cat6" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#008000; stop-opacity:0.95" />
+            <stop offset="100%" style="stop-color:#008000; stop-opacity:0.05" />
+        </linearGradient>
+    </defs>
+</svg>
+<div rf-page="list" rf-page-title="DASHBOARD" rf-page-tagline="Search and manage Dashboard data.">
+    <div style="margin-top:10px;font-family: 'Quicksand', sans-serif;margin-left: -10px;margin-right: -10px;">
+        <div class="row">
+
+            <div class="col-md-4" style="text-align:center">
+                <div rf-card="<i class='fa fa-pie-chart   mr-2'></i> Governorate wise Beneficiary ">
+                    <div id="chart_Governorate" style="height: 200px;" b-graph-title="Governorate wise Beneficiary" b-graph-type="donut" b-graph-height="200" b-graph-data="Dashboard_Governorate_Wise_Ben"></div>
+                </div>
+            </div>
+            <div class="col-md-4" style="text-align:center">
+                <div rf-card="<i class='fa fa-bar-chart   mr-2'></i> District wise Beneficiary">
+                    <div id="chart_AgeSegregated" style="height: 200px;" b-graph-title="District wise Beneficiary" b-graph-type="donut" b-graph-height="200" b-graph-data="Dashboard_District_Wise_Ben"></div>
+                </div>
+            </div>
+            <div class="col-md-4" style="text-align:center">
+                <div rf-card="<i class='fa fa-pie-chart   mr-2'></i> Village wise Beneficiary ">
+                    <div id="chart_ProviderType" style="height: 200px;" b-graph-title="Village wise Beneficiary" b-graph-type="donut" b-graph-height="200" b-graph-data="Dashboard_Village_Wise_Ben"></div>
+                </div>
+            </div>
+
+            @*<div class="col-md-3" style="text-align:center">
+                    <div rf-card="<i class='fa fa-bar-chart   mr-2'></i> Category wise Beneficiary">
+                        <div id="chart_Category" style="height: 200px;" b-graph-title="Category wise feedback" b-graph-type="column" b-graph-height="200" b-graph-data="Dashboard_Category"></div>
+                    </div>
+                </div>*@
+
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="text-align:center">
+                <div rf-card="<i class='fa fa-table   mr-2'></i> Training participant ">
+                    <div id="tablediv" style="min-height: 200px;">
+                        <table id="tblTraining" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Governorate</th>
+                                    <th>District</th>
+                                    <th>Male</th>
+                                    <th>Female</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" style="text-align:center">
+                <div rf-card="<i class='fa fa-pie-chart   mr-2'></i> Category wise Participant ">
+                    <div id="chart_TrainingCategory" style="height: 200px;" b-graph-title="Category wise Participant" b-graph-type="column" b-graph-height="200"></div>
+                </div>
+            </div>
+            <div class="col-md-4" style="text-align:center">
+                <div rf-card="<i class='fa fa-pie-chart   mr-2'></i> Governorate wise Participant ">
+                    <div id="chart_TrainingGovernorate" style="height: 200px;" b-graph-title="Governorate wise Participant" b-graph-type="column" b-graph-height="200"></div>
+                </div>
+            </div>
+        </div>
+        @*<div class="row">
+                <div class="col-md-12">
+                    <div class="kt-container kt-grid__item kt-grid__item--fluid" style="display: block;">
+                        <div class="kt-container  kt-grid__item kt-grid__item--fluid">
+                            <div class="kt-portlet">
+                                <div class="kt-portlet__head">
+                                    <div class="kt-portlet__head-label">
+                                        <h3 class="kt-portlet__head-title">
+                                            <span id="rf-card-title"><i class='fa fa-line-chart   mr-2' style='color:#1dc9b7;'></i> Beneficiary trend</span>
+                                        </h3>
+                                    </div>
+                                    <div class="kt-portlet__head-toolbar">
+                                        <a href="#" class="btn btn-icon" data-toggle="collapse" data-target="#demo">
+                                            <i class="flaticon-search kt-font-brand"></i>
+                                        </a>
+                                        <div class="dropdown-menu-right collapse" id="demo" style="position:absolute;top:43px; background:#fff;box-shadow: 0 0 50px 0 rgba(82,63,105,.15); z-index: 95;width:200px;">
+                                            <ul class="kt-nav">
+                                                <li class="kt-nav__item">
+                                                    <div style="width: 95%; height: 40px !important; padding-top: 10px;margin-left: 10px;">
+                                                        <div class="kt-radio-inline" rf-rdo id="TrendType">
+                                                            <label class="kt-radio kt-radio--bold">
+                                                                <input name="TrendType" type="radio" value="1" checked="checked"> Daily
+                                                                <span></span>
+                                                            </label>
+                                                            <label class="kt-radio kt-radio--bold">
+                                                                <input name="TrendType" type="radio" value="0"> Monthly
+                                                                <span></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="kt-nav__item">
+                                                    <div style="width: 95%; height: 40px !important; padding-top: 5px;margin-left: 5px;">
+                                                        <select id="CategoryId" class="custom-select form-control" style="line-height: 1.1 !important;height: calc(1.6em + 1.0rem + 2px);">
+                                                            <option selected>Category</option>
+                                                            <option value="1">Children's clubs</option>
+                                                            <option value="2">Village Child Development Committee (VCDC)</option>
+                                                            <option value="3">Role of Child Protection Focal Point</option>
+                                                            <option value="4">Child Development Centre (CDC)</option>
+                                                            <option value="5">Access to Government Child Protection services</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li class="kt-nav__item">
+                                                    <div style="width: 95%; height: 40px !important; padding-top: 5px;margin-left: 5px;">
+                                                        <select id="Year" class="custom-select form-control" style="line-height: 1.1 !important;height: calc(1.6em + 1.0rem + 2px);">
+                                                            <option selected>Year</option>
+                                                            <option value="2020">2020</option>
+                                                            <option value="2021">2021</option>
+                                                            <option value="2022">2022</option>
+                                                            <option value="2023">2023</option>
+                                                            <option value="2024">2024</option>
+                                                            <option value="2025">2025</option>
+                                                            <option value="2026">2026</option>
+                                                            <option value="2027">2027</option>
+                                                            <option value="2028">2028</option>
+                                                            <option value="2029">2029</option>
+                                                            <option value="2030">2030</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li class="kt-nav__item" id="monthDiv">
+                                                    <div style="width: 95%; height: 40px !important; padding-top: 5px;margin-left: 5px;">
+                                                        <select id="Month" class="custom-select form-control" style="line-height: 1.1 !important;height: calc(1.6em + 1.0rem + 2px);">
+                                                            <option selected>Month</option>
+                                                            <option value="1">January</option>
+                                                            <option value="2">February</option>
+                                                            <option value="3">March</option>
+                                                            <option value="4">April</option>
+                                                            <option value="5">May</option>
+                                                            <option value="6">June</option>
+                                                            <option value="7">July</option>
+                                                            <option value="8">August</option>
+                                                            <option value="9">September</option>
+                                                            <option value="10">October</option>
+                                                            <option value="11">November</option>
+                                                            <option value="12">December</option>
+                                                        </select>
+                                                    </div>
+                                                </li>
+                                                <li class="kt-nav__item">
+                                                    <div style="width: 80%; height: 40px !important; padding-top: 5px;margin-left: 20px;text-align:center;">
+                                                        <input class="btn btn-block btn-label-danger btn-bold btn-sm" type="button" value="Search" onclick="SearchFeedbackTrend()" />
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="rf-card-content" style="padding:6px;">
+                                    <div style="min-height: 250px; max-height: 250px;" id="monthlytrendChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="~/js/dashboard.js"></script>
+<script src="~/js/egefilters.js"></script>
+<script type="text/javascript">
+    //Boy(<18 years)=1, Girl(<18 years)=2, Man (18+ years)=3, Woman (18+years)=4,  Transexual=5
+    var filterOption;
+    rf.ui.renderComplete = function () {
+        var filter = new jFilter('jFilter', 'DASHBOARD', 'Search and manage Dashboard data.');
+        var today = new Date().toISOString().split('T')[0];
+        var cMonth = new Date().getMonth() +1;
+        var cYear = new Date().getFullYear();
+        $("#Year").val(cYear);
+        $("#Month").val(cMonth);
+        $("#TrendType").val(0);
+        $("#CategoryId").val(0);
+        filter.setFilter({ FromDate: '2020-01-01', ToDate: today });
+
+        filter.onClick(function (filterData) {
+            filterOption = filterData;
+            filterOption.TrendType = $('input[name="TrendType"]:checked').val();
+            filterOption.CategoryId = $("#CategoryId").val();
+            filterOption.Year = $("#Year").val();
+            filterOption.Month = $("#Month").val();
+            SearchData(filterData);
+        });
+
+     $("#monthDiv").hide();
+        $("#TrendType").change(function (e) {
+            var selectedVal = $('input[name="TrendType"]:checked').val();
+            if (selectedVal == "1") {
+                $("#monthDiv").show();
+            }
+            else {
+                $("#monthDiv").hide();
+            }
+            //SearchFeedbackTrend();
+
+        })
+        $("#Year").change(function (e) {
+            //SearchFeedbackTrend();
+        })
+        $("#Month").change(function (e) {
+            //SearchFeedbackTrend();
+        })
+        $("#CategoryId").change(function (e) {
+            //SearchFeedbackTrend();
+        })
+
+
+
+
+    };
+    function SearchData(filter) {
+        bindChart(filter);
+        LoadTrainingInfo(filter);
+        //SearchFeedbackTrend();
+         //bindChart('chart_ProviderType', filter, "Dashboard_ProviderType");
+         //bindChart('chart_Category', filter, "Dashboard_Category");
+         //bindChart('monthlytrendChart', filter, "Dashboard_Trend");
+    }
+     function SearchFeedbackTrend() {
+
+            filterOption.TrendType = $('input[name="TrendType"]:checked').val();
+            filterOption.CategoryId = $("#CategoryId").val();
+            filterOption.Year = $("#Year").val();
+            filterOption.Month = $("#Month").val();
+            filterOption.SPName = "Dashboard_Trend";
+            $("#demo").removeClass('show');
+
+            rf.api.actionCallForAccount('@Url.Action("GetDashboardData","Dashboard")', 'GET', filterOption, function (data, status) {
+                if (status) {
+                    ChartManager.createAreaChart("monthlytrendChart", "", data.record);
+                }
+            }, '#monthlytrendChart');
+    }
+
+    function bindChart( filter) {
+
+
+         $('[b-graph-title]').each(function (i, t) {
+             filter.SPName = $(t).attr('b-graph-data');
+             var sName = filter.SPName;
+             var selector = $(t)[0].id;
+             if (sName == "Dashboard_Governorate_Wise_Ben" || sName == "Dashboard_District_Wise_Ben" || sName == "Dashboard_Village_Wise_Ben" ) {
+
+
+            rf.api.actionCallForAccount('/Dashboard/GetDashboardData', 'GET',filter,  function (data, status) {
+                if (status) {
+                    myData = data.record;
+                    var type = $(t).attr('b-graph-type');
+                    if (type == 'column')
+                        ChartManager.createColumnChart($(t)[0].id, myData);
+
+                    else if (type == 'table') {
+                            GenerateTbody($(t)[0].id, data.record);
+                        } else {
+                            ChartManager.createPieChart(t, $(t).attr('b-graph-title'), myData, type, parseInt($(t).attr('b-graph-height')));
+                        }
+
+
+
+
+
+                }
+            }, '#' + selector);
+             }
+             });
+
+    }
+
+    function LoadTrainingInfo(filter) {
+
+        var selector = "tblTraining";
+        rf.api.actionCallForAccount('/Dashboard/GetTrainingDashboardData', 'GET', filter, function (data, status) {
+            if (status) {
+               
+                GenerateTrainingTbody(selector, data.record);
+
+                ChartManager.createPieChart("#chart_TrainingCategory", "Category wise Participant", data.category, "donut", 200);
+                ChartManager.createPieChart("#chart_TrainingGovernorate", "Governorate wise Participant", data.governorate, "donut", 200);
+
+            }
+        }, '#' + selector);
+    }
+
+
+    function GenerateTrainingTbody(selector, data) {
+
+        var html = '';
+        data.forEach(function (item) {
+
+            html += '<tr>';
+            html += '<td lang="Ar">' + item.Category + '</td>';
+            html += '<td>' + item.Governorate + '</td>';
+            html += '<td>' + item.District + '</td>';
+            html += '<td><span class="kt-badge kt-badge--outline kt-badge--success kt-badge--lg">' + item.Male + '</span></td>';
+            html += '<td><span class="kt-badge kt-badge--outline kt-badge--pink kt-badge--lg">' + item.Female + '</span></td>';
+            html += '<td><span class="kt-badge kt-badge--outline kt-badge--info kt-badge--lg">' + item.Total + '</span></td>';
+            html += '</tr>';
+        })
+       $("#"+selector +" tbody").html(html);
+        setScroll(selector , '200px');
+    };
+    function setScroll(tableId, height) {
+        $('#' + tableId).wrap("<div id='tableWrapper" + tableId + "' style='display:block;'></div>");
+        $('#tableWrapper' + tableId).slimScroll({
+            height: height,
+            color: 'rgba(0, 0, 0, 0.5)',
+            size: '8px'
+        });
+    }
+</script>
+
+
+

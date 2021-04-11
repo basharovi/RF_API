@@ -1,0 +1,98 @@
+﻿@model BusinessDomain.Aggregates.StudentInfo
+<style>
+    #TBbtnDelete, #TBbtnGroup {
+        display: none;
+    }
+
+    #TBbtnBack {
+        margin-right: 0px !important;
+    }
+
+    #TBbtnSave {
+        border-radius: 4px;
+        padding-left: 4px;
+    }
+</style>
+<div rf-page="entry" rf-page-title="StudentInfo" rf-page-tagline="Manage StudentInfo information" rf-page-back="/View/StudentInfo/Index">
+    <div rf-card="StudentInfo Entry Information" style="display:none;">
+        <form rf-form="StudentInfo" id="StudentInfoForm">
+            <div class="row">
+                <div class="col-md-3">
+                    <div style="margin-top: 23px;width: 220px;margin: 0 auto;margin-bottom: 10px;">
+                        <label style="color:#96979b;font-weight:100; text-align: center">
+                            You can enter Individual Student  information by using this.
+                            Other side you also can update Student information if you have done any kind of mistake.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" rf-pk asp-for="StudentId" class="form-control" />
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label asp-for="StudentName" class="control-label">Student Name</label>
+                            <input rf-tb asp-for="StudentName" class="form-control" />
+                            <span asp-validation-for="StudentName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
+                            <div class="input-group date">
+                                <input type="text" rf-dtp asp-for="DateOfBirth" class="form-control" placeholder="Select date">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label asp-for="GradeId" class="control-label">Grade</label>
+                            <input asp-for="GradeId" rf-ddl readonly class="form-control" />
+                            <span asp-validation-for="GradeId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label asp-for="RollNumber" class="control-label">Roll</label>
+                            <input rf-tb asp-for="RollNumber" class="form-control" />
+                            <span asp-validation-for="RollNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="control-label">Sex</label>
+                            <div class="kt-radio-inline" rf-rdo id="Sex">
+                                <label class="kt-radio kt-radio--bold">
+                                    <input asp-for="Sex" type="radio" checked value="1"> Male
+                                    <span></span>
+                                </label>
+                                <label class="kt-radio kt-radio--bold">
+                                    <input asp-for="Sex" type="radio" value="2"> Female
+                                    <span></span>
+                                </label>
+                            </div>
+                            <span asp-validation-for="Sex" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="control-label">Status</label>
+                            <div class="kt-radio-inline" rf-rdo id="IsActive">
+                                <label class="kt-radio kt-radio--bold">
+                                    <input asp-for="IsActive" type="radio" checked value="1"> Active
+                                    <span></span>
+                                </label>
+                                <label class="kt-radio kt-radio--bold">
+                                    <input asp-for="IsActive" type="radio" value="0"> In Active
+                                    <span></span>
+                                </label>
+                            </div>
+                            <span asp-validation-for="IsActive" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    rf.ui.onRenderComplete(function () {
+        rf.ui.remoteBind('#GradeId', '/control/ctddl/GradeInfo/GradeName/GradeId');
+    });
+</script>

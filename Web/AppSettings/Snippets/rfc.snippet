@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>RapidFire Code Helper - rfc</Title>
+      <Author>Imrose</Author>
+      <Description>Adds boilerplate code for creating a class</Description>
+      <Shortcut>rfc</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.ComponentModel.DataAnnotations.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.ComponentModel.DataAnnotations</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>classname</ID>
+          <ToolTip>Replace with specified name</ToolTip>
+          <Default>MyClass</Default>
+        </Literal>
+        <Object>
+          <ID>Object</ID>
+          <Type>System.Object</Type>
+          <ToolTip>Replace with a object in your application.</ToolTip>
+          <Default>myObject</Default>
+        </Object>
+      </Declarations>
+      <Code Language="HTML">
+        <![CDATA[ 
+              <div rf-card="Model Iformation" style="display:none;">
+
+              </div>
+              ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

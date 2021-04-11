@@ -1,0 +1,54 @@
+﻿@model BusinessDomain.Aggregates.GradeInfo
+<style>
+    .table-bordered {
+        border: 1px solid #ebedf2 !important;
+    }
+
+    #Grade > thead > tr > th {
+        position: sticky;
+        top: -1px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
+        background-color: #fbfbfb;
+        transition: all 1s ease-in;
+        z-index: 2;
+    }
+</style>
+<div rf-card="Grade/Category Setup">
+    <div id="GradeInfoFormDiv">
+        <partial name="~/Views/Aggregates/Settings/GradeInfoForm.cshtml" model="Model ?? new BusinessDomain.Aggregates.GradeInfo()" />
+    </div>
+
+
+    <div class="row">
+        <div class="kt-section__title kt-font-brand" style="margin-bottom:10px;">
+            <h6><i class="fa fa-edit"></i> Grade/Category list:</h6>
+        </div>
+
+        <table class="table table-bordered table-striped table-hover" id="Grade">
+            <thead>
+                <tr>
+                    <th>Grade/Category</th>
+                    <th>Grade/Category Bn</th>
+                    <th style="text-align:center;">Manage</th>
+                </tr>
+            </thead>
+            <tbody id="GradeTable"></tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="~/js/settings.js"></script>
+<script>
+
+    rf.ui.onRenderComplete(function () {
+        LoadList('/Setup/GetGradeInfo', 'GradeTable', 'GradeInfo', true, '', false, '', 'GradeId');
+        rf.db.registerDefaultSave(function () {
+            Save();
+        });
+    });
+
+</script>
+
+
+

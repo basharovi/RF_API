@@ -1,0 +1,30 @@
+﻿
+@model BusinessDomain.Aggregates.GradeInfo
+@{ 
+    Layout = null;
+}
+    <form rf-form="GradeInfo" id="GradeInfo" rf-form-action="/Setup/SaveGradeInfo" enctype="multipart/form-data" rf-page-back="/">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input hidden rf-pk asp-for="GradeId" class="form-control" />
+        <div class="row">
+            <div class="kt-section__title kt-font-brand" style="margin-bottom:15px;">
+                <h6><i class="fa fa-edit"></i> Grade/Category information :</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="padding-left:0px;">
+                <div class="form-group">
+                    <label asp-for="GradeName" class="control-label">Grade/Category Name <span class="red-starics">*</span></label>
+                    <input rf-tb asp-for="GradeName" class="form-control" />
+                    <span asp-validation-for="GradeName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding-right:0px;">
+                <div class="form-group">
+                    <label asp-for="GradeNameBn" class="control-label">Grade/Category Name (Bn)</label>
+                    <input rf-tb asp-for="GradeNameBn" class="form-control" />
+                    <span asp-validation-for="GradeNameBn" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </form>

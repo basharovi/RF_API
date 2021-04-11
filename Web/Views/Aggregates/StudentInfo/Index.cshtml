@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Student List";
+}
+<style>
+    table tr td:last-child {
+        text-align: center !important;
+    }
+
+    #rf-export-btn {
+        display: none;
+    }
+
+    #rf-add-btn > .dropdown-toggle {
+        display: none;
+    }
+
+    #rf-add-btn > .btn {
+        border-radius: 4px;
+        padding-left: 4px;
+    }
+</style>
+<div rf-page="list" rf-page-title="Student Information" rf-page-tagline="Select student from list for modification or add new" rf-page-back="/Home/Index" rf-page-add="/View/StudentInfo/StudentInfo">
+    <div rf-card="" style="display:block;">
+        <div class="row">
+            <div class="col-lg-12" style="padding:0px">
+                <div class="">
+                    <div id="jFilterOLD" style="margin-top: 10px;font-family: 'Quicksand', sans-serif;display:none;"></div>
+                    <div style="margin-top:0px;font-family: 'Quicksand', sans-serif;">
+                        <div id="studentGrid">
+                            <div class="j-detail">
+                                <table id="StudentInfoView" class="table table-bordered table-striped table-hover" style="font-size:10px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="display:none;">StudentId</th>
+                                            <th style="min-width:250px;">Student Name</th>
+                                            <th style="">Date of Birth</th>
+                                            <th style="min-width: 200px;">Grade</th>
+                                            <th style="">Roll</th>
+                                            <th style="">Sex</th>
+                                            <th style="">Is Active</th>
+                                            <th style="text-align:center;min-width:55px">Manage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="font-weight: 500;"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    rf.ui.onRenderComplete(function () {
+        var filter = new jFilter('jFilter', 'Student Info', 'Search and manage Student Info records.');
+        var today = new Date().toISOString().split('T')[0];
+        filter.setFilter({ FromDate: '2016-06-14', ToDate: today });
+
+        filter.onClick(function (filterData) {
+            SearchData(filterData);
+        });
+    });
+
+
+    function SearchData(filter) {
+        var actionPath = "/control/Grid/JGridSelector";
+        var studentGrid = new jGrid('studentGrid', 'All student list', actionPath, filter, 'Ivory');
+        studentGrid.externalEditPage = 'StudentInfo/StudentInfo?StudentId';
+        studentGrid.enableEncription = false;
+        studentGrid.pagingSize = 7;
+
+        studentGrid.bindSingle('StudentInfoView', "0", false, true, false, false, true);
+    }
+
+</script>
