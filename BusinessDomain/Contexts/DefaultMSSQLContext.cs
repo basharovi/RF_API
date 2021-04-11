@@ -1,4 +1,5 @@
 ﻿using BusinessDomain.Aggregates;
+using BusinessDomain.Aggregates.Product;
 using Microsoft.EntityFrameworkCore;
 using RapidFireLib.Lib.Core;
 using RapidFireLib.Models;
@@ -18,6 +19,6 @@ namespace BusinessDomain.Contexts
         public DbSet<StudentInfo> StudentInfo { get; set; }
         #endregion
 
-
+        public ProductInfo ProductInfo { get; set; }
     }
 }

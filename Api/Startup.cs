@@ -25,10 +25,6 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new Info { Title = "Employee API", Version = "V1" });
-            });
-
             services.AddRapidFire(new AppConfig());
 
             services.AddCors(options =>
@@ -81,10 +77,6 @@ namespace API
             app.UseCors();
             app.UseAuthentication();
             app.UseHttpsRedirection();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "post API V1");
-            });
             app.UseMvc(routes =>
             {
                 routes.MapRoute("Default", "api/{controller}/{action}/{id?}");
