@@ -19,6 +19,6 @@ namespace BusinessDomain.Contexts
         public DbSet<StudentInfo> StudentInfo { get; set; }
         #endregion
 
-        public ProductInfo ProductInfo { get; set; }
+        public DbSet<ProductInfo> ProductInfo { get; set; }
     }
 }

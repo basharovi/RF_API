@@ -1,5 +1,4 @@
-﻿using System;
-using RapidFireLib.Lib.Core;
+﻿using RapidFireLib.Lib.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace BusinessDomain.Aggregates.Product
@@ -7,8 +6,9 @@ namespace BusinessDomain.Aggregates.Product
     public class ProductInfo : IModel
     {
         [Key]
-        public string ProductId { get; set; } = Guid.NewGuid().ToString();
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
+        [Required]
         public decimal Price { get; set; }
     }
 }

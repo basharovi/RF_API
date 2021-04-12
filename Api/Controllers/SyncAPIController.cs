@@ -30,6 +30,10 @@ namespace API.Controllers
 
             switch (apr.TableName)
             {
+                case "ProductInfo":
+                    apiResponse = rf.Api.ProcessSync(apr, null, null, new CustomHandler());
+
+                    break;
                 default:
                     var sqlString = GetUUIDBasedSQL(apr);
                     //apiResponse = rf.Api.ProcessSync(apr, null, string.IsNullOrEmpty(sqlString) ? null : sqlString, new SyncHandler());
