@@ -1,4 +1,5 @@
 ﻿using BusinessDomain.Aggregates;
+using BusinessDomain.Aggregates.Category;
 using BusinessDomain.Aggregates.Product;
 using Microsoft.EntityFrameworkCore;
 using RapidFireLib.Lib.Core;
@@ -20,5 +21,6 @@ namespace BusinessDomain.Contexts
         #endregion
 
         public DbSet<ProductInfo> ProductInfo { get; set; }
+        public DbSet<CategoryInfo> CategoryInfo { get; set; }
     }
 }

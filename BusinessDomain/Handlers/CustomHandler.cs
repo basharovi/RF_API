@@ -8,10 +8,13 @@ namespace BusinessDomain.Handlers
     {
         public object Handle(DbProcessMode modePrePost, DbProcessType processType, object model, Db db)
         {
-            var product = (ProductInfo)model;
-            db.ExecuteSQL($"EXEC DeleteProduct '{product.ProductId}'");
-            //throw new System.NotImplementedException();
-            return null;
+            var modelName = model.GetType().Name;
+            var recordId = model.GetType().GetProperty($"{modelName.Replace("Info", "")}Id");
+
+            var sql = $"DELETE FROM {modelName} WHERE {recordId.Name} = {recordId.GetValue(model)}";
+            db.ExecuteSQL(sql);
+
+            return "Executed";
         }
     }
 }

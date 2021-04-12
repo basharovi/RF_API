@@ -4,8 +4,8 @@ using RapidFireLib.Models.Api;
 using RapidFireLib.Lib.Extension;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using BusinessDomain.Handlers;
+
 namespace API.Controllers
 {
 
@@ -30,13 +30,14 @@ namespace API.Controllers
 
             switch (apr.TableName)
             {
-                case "ProductInfo":
-                    apiResponse = rf.Api.ProcessSync(apr, null, null, new CustomHandler());
-
-                    break;
                 default:
+                    if(apr.Command.Equals("Custom"))
+                    {
+                        apiResponse = rf.Api.ProcessSync(apr, null, null, new CustomHandler());
+                        break;
+                    }
+
                     var sqlString = GetUUIDBasedSQL(apr);
-                    //apiResponse = rf.Api.ProcessSync(apr, null, string.IsNullOrEmpty(sqlString) ? null : sqlString, new SyncHandler());
                     apiResponse = rf.Api.ProcessSync(apr, null, string.IsNullOrEmpty(sqlString) ? null : sqlString, rf.Config.Item.DB.DynamicApiHandlers);
                     break;
             }
@@ -44,7 +45,5 @@ namespace API.Controllers
             apiResponse.ModelName = apr.TableName;
             return apiResponse;
         }
-
-
     }
 }

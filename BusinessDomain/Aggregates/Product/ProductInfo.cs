@@ -10,5 +10,7 @@ namespace BusinessDomain.Aggregates.Product
         public string ProductName { get; set; }
         [Required]
         public decimal Price { get; set; }
+        [Required]
+        public int CategoryId { get; set; }
     }
 }
